@@ -27,7 +27,8 @@ public class WebConfiguration extends WebSecurityConfigurerAdapter {
     private final UserProfileDetailsService userProfileDetailsService;
 
     private static final RequestMatcher PUBLIC_URLS = new OrRequestMatcher(
-            new AntPathRequestMatcher("/auth/**")
+            new AntPathRequestMatcher("/login/**"),
+            new AntPathRequestMatcher("/signup/**")
     );
 
     @Autowired
