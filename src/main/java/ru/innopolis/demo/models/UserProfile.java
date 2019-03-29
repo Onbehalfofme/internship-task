@@ -5,11 +5,12 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 
-import ch.qos.logback.classic.pattern.DateConverter;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.innopolis.demo.converters.DateConverter;
 
 import java.time.LocalDate;
 

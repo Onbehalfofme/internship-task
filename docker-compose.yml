@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    env_file: .env
+    ports:
+      - ${POSTGRES_PORT_EXTERNAL}:${POSTGRES_PORT_INTERNAL}
+    volumes:
+      - task_db:${PGDATA}
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - PGDATA=${PGDATA}
+
+volumes:
+  task_db:
