@@ -1,0 +1,13 @@
+package ru.innopolis.demo.data;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import ru.innopolis.demo.models.UserProfile;
+
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<UserProfile, Long> {
+
+    boolean existsByEmail(String email);
+
+    Optional<UserProfile> findByEmail(String email);
+}
