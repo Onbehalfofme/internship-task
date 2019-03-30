@@ -1,17 +1,14 @@
 package ru.innopolis.demo.models;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
-
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.innopolis.demo.converters.DateConverter;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
 @Data
@@ -46,7 +43,7 @@ public class UserProfile {
     private LocalDate birthday;
 
     @NotNull
-    @Size(max = 16)
+    @Enumerated(value = EnumType.STRING)
     private Role role;
 
 
