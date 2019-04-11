@@ -1,6 +1,7 @@
 package ru.innopolis.demo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.logging.LogLevel;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -9,6 +10,7 @@ import org.springframework.web.server.ResponseStatusException;
 import ru.innopolis.demo.data.GoodRepository;
 import ru.innopolis.demo.models.Good;
 import ru.innopolis.demo.payloads.GoodPayload;
+import ru.tinkoff.eclair.annotation.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +26,7 @@ public class GoodController {
         this.goodRepository = goodRepository;
     }
 
+    @Log(LogLevel.INFO)
     @GetMapping("/category/{category}")
     public List<Good> getGoodsByCategory(@PathVariable String category) {
         List<Good> result = new ArrayList<>(goodRepository.findAllByCategory(category));
@@ -34,6 +37,7 @@ public class GoodController {
     }
 
     @PreAuthorize("hasAnyRole(T(ru.innopolis.demo.models.Role).ROLE_ADMIN.name())")
+    @Log(LogLevel.INFO)
     @PatchMapping("/update/{name}")
     public void updateGoodPrice(@PathVariable String name, @RequestBody GoodPayload goodPayload) {
         Optional<Good> goodToCheck = goodRepository.findDistinctByName(name);
@@ -68,6 +72,7 @@ public class GoodController {
 
 
     @PreAuthorize("hasAnyRole(T(ru.innopolis.demo.models.Role).ROLE_ADMIN.name())")
+    @Log(LogLevel.INFO)
     @DeleteMapping("/delete/category/{category}")
     public void deleteAllGoodsOfCategory(@PathVariable String category) {
         try {
@@ -78,6 +83,7 @@ public class GoodController {
     }
 
     @PreAuthorize("hasAnyRole(T(ru.innopolis.demo.models.Role).ROLE_ADMIN.name())")
+    @Log(LogLevel.INFO)
     @DeleteMapping("/delete/name/{name}")
     public void deleteGoodByName(@PathVariable String name) {
         try {
@@ -88,6 +94,7 @@ public class GoodController {
     }
 
     @PreAuthorize("hasRole(T(ru.innopolis.demo.models.Role).ROLE_ADMIN.name())")
+    @Log(LogLevel.INFO)
     @PostMapping("/add")
     public void addGoods(@RequestBody GoodPayload good) {
         if (goodRepository.existsByName(good.getName())) {

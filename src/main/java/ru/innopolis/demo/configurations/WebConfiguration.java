@@ -30,6 +30,7 @@ public class WebConfiguration extends WebSecurityConfigurerAdapter {
 
     private static final RequestMatcher PUBLIC_URLS = new OrRequestMatcher(
             new AntPathRequestMatcher("/login/**"),
+            new AntPathRequestMatcher("/update/login/**"),
             new AntPathRequestMatcher("/signup/**")
     );
 
