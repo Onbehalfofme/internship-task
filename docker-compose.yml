@@ -21,11 +21,51 @@ services:
     restart:  always
     depends_on:
       - postgres
+      - logstash
     ports:
       - 8080:8080
+    volumes:
+      - tmp:/tmp
+      - logs:/log
+
     build:
       context: ./
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile-app
+
+  logstash:
+    image: logstash
+    restart: on-failure
+    depends_on:
+      - elasticsearch
+    ports:
+      - 25681:25681
+    volumes:
+      - tmp:/tmp
+      - logs:/log
+    links:
+      - elasticsearch
+    build:
+      context: ./
+      dockerfile: Dockerfile-logstash
+
+  elasticsearch:
+    image: elasticsearch:5
+    restart: on-failure
+    ports:
+      - 9200:9200
+
+  kibana:
+    image: kibana:5.5.2
+    restart: on-failure
+    depends_on:
+      - elasticsearch
+    ports:
+      - 5601:5601
+    links:
+      - elasticsearch
+
 
 volumes:
   task_db:
+  tmp:
+  logs:
