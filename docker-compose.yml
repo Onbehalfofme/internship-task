@@ -16,5 +16,16 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - PGDATA=${PGDATA}
 
+  application:
+    image: application
+    restart:  always
+    depends_on:
+      - postgres
+    ports:
+      - 8080:8080
+    build:
+      context: ./
+      dockerfile: Dockerfile
+
 volumes:
   task_db:
