@@ -51,6 +51,8 @@ services:
   elasticsearch:
     image: elasticsearch:5
     restart: on-failure
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     ports:
       - 9200:9200
 
