@@ -1,7 +1,8 @@
 package ru.innopolis.demo.configurations;
 
 
-import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -19,7 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@Log
+@Slf4j
 @Service
 public class TokenAuthenticationFilter extends OncePerRequestFilter {
 
@@ -52,7 +53,7 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
                 SecurityContextHolder.getContext().setAuthentication(token);
             }
         } catch (Exception e) {
-            log.warning("Could not set user authentication in security context. Exception: " + e);
+            log.warn("Could not set user authentication in security context. Exception: " + e);
         }
 
         filterChain.doFilter(httpServletRequest, httpServletResponse);

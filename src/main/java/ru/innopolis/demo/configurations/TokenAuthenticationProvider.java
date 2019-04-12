@@ -1,7 +1,7 @@
 package ru.innopolis.demo.configurations;
 
 import io.jsonwebtoken.*;
-import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
@@ -9,7 +9,7 @@ import ru.innopolis.demo.models.UserProfileDetails;
 
 import java.util.Date;
 
-@Log
+@Slf4j
 @Service
 public class TokenAuthenticationProvider {
     @Value("${jwt.secret}")
@@ -55,13 +55,13 @@ public class TokenAuthenticationProvider {
             Jwts.parser().setSigningKey(tokenSecret).parseClaimsJws(authToken);
             return true;
         } catch (MalformedJwtException ex) {
-            log.warning("Invalid JWT token");
+            log.warn("Invalid JWT token");
         } catch (ExpiredJwtException ex) {
-            log.warning("Expired JWT token");
+            log.warn("Expired JWT token");
         } catch (UnsupportedJwtException ex) {
-            log.warning("Unsupported JWT token");
+            log.warn("Unsupported JWT token");
         } catch (IllegalArgumentException ex) {
-            log.warning("JWT claims string is empty.");
+            log.warn("JWT claims string is empty.");
         }
         return false;
     }
