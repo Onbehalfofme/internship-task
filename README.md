@@ -7,3 +7,5 @@ For this project these technologies were used:
   * Spring Boot
   * PostgreSQL
   * ELK stack for logging
+  
+  ## Important: Swagger can't parse date format in the right way so the right format is DD.MM.YYYY instead of YYYY-MM-DD.
