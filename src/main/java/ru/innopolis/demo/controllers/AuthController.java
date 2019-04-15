@@ -88,7 +88,7 @@ public class AuthController {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "A user with such email already exists");
         }
 
-        UserProfile userProfile = userRepository.findByEmail(currentUser.getUsername()).get();
+        UserProfile userProfile = userRepository.getByEmail(currentUser.getUsername());
         userProfile.setEmail(newEmail.getEmail());
         userRepository.save(userProfile);
     }
@@ -98,7 +98,7 @@ public class AuthController {
     public void updatePassword(@RequestBody PasswordPayload newPassword){
 
         UserProfileDetails currentUser = (UserProfileDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        UserProfile user = userRepository.findByEmail(currentUser.getUsername()).get();
+        UserProfile user = userRepository.getByEmail(currentUser.getUsername());
         user.setPassword(passwordEncoder.encode(newPassword.getPassword()));
         userRepository.save(user);
 
