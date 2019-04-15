@@ -9,6 +9,9 @@ import ru.innopolis.demo.models.UserProfileDetails;
 
 import java.util.Date;
 
+/**
+ * This class is used for JWT token generation
+ */
 @Slf4j
 @Service
 public class TokenAuthenticationProvider {

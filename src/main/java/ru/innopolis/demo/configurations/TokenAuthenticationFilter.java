@@ -20,6 +20,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * This class is used for JWT token identification
+ */
 @Slf4j
 @Service
 public class TokenAuthenticationFilter extends OncePerRequestFilter {

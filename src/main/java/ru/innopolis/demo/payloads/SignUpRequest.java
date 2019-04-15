@@ -5,6 +5,9 @@ import lombok.Data;
 
 import java.time.LocalDate;
 
+/**
+ * this payload is used to transmit all needed information about signed up user
+ */
 @Data
 public class SignUpRequest {
     private String email;

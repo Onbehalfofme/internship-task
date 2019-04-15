@@ -12,6 +12,9 @@ import ru.innopolis.demo.models.UserProfileDetails;
 
 import java.util.Optional;
 
+/**
+ * This class is used for web security
+ */
 @Service
 public class UserProfileDetailsService implements UserDetailsService {
 

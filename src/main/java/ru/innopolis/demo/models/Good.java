@@ -10,6 +10,9 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+/**
+ *  Model contains information about goods
+ */
 @Data
 @Entity
 @NoArgsConstructor

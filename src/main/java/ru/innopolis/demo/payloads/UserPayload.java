@@ -7,6 +7,9 @@ import ru.innopolis.demo.models.UserProfile;
 
 import java.time.LocalDate;
 
+/**
+ * This payload is used to return saved data after signing up
+ */
 @Data
 public class UserPayload {
 

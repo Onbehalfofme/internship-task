@@ -16,6 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * This class contains API for requests connected with goods
+ */
 @RestController
 @RequestMapping("/goods")
 public class GoodController {

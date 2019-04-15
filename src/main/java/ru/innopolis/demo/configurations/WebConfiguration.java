@@ -21,6 +21,9 @@ import ru.innopolis.demo.services.UserProfileDetailsService;
 
 import static org.springframework.http.HttpStatus.UNAUTHORIZED;
 
+/**
+ * This class set up web configuration for the project
+ */
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableWebSecurity
 public class WebConfiguration extends WebSecurityConfigurerAdapter {

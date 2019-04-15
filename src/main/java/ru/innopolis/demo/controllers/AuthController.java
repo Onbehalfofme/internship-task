@@ -23,6 +23,9 @@ import ru.innopolis.demo.models.UserProfileDetails;
 import ru.innopolis.demo.payloads.*;
 import ru.tinkoff.eclair.annotation.Log;
 
+/**
+ * This class contains API for requests connected with users
+ */
 @RestController
 public class AuthController {
     private final UserRepository userRepository;

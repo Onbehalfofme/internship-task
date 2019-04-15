@@ -8,7 +8,9 @@ import ru.innopolis.demo.models.Good;
 import java.util.List;
 import java.util.Optional;
 
-
+/**
+ * JPA-repository for {@link Good} model
+ */
 @Repository
 public interface GoodRepository extends JpaRepository<Good, Long> {
      List<Good> findAllByCategory(String category);

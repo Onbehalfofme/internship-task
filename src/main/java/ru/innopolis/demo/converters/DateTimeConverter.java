@@ -3,7 +3,9 @@ package ru.innopolis.demo.converters;
 import javax.persistence.AttributeConverter;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
-
+/**
+ * this class is used for converting dateTime into required form
+ */
 public class DateTimeConverter implements AttributeConverter<LocalDateTime, Timestamp> {
 
     @Override

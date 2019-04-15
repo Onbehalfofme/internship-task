@@ -10,7 +10,9 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
-
+/**
+ *  Model contains information about users in the system
+ */
 @Data
 @Entity
 @NoArgsConstructor

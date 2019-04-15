@@ -4,6 +4,9 @@ import javax.persistence.AttributeConverter;
 import java.sql.Date;
 import java.time.LocalDate;
 
+/**
+ * this class is used for converting date into required form
+ */
 public class DateConverter implements AttributeConverter<LocalDate, Date> {
 
     @Override

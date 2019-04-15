@@ -7,6 +7,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Collections;
 
+/**
+ *  Model contains information about users and used for authorization and security
+ */
 public class UserProfileDetails implements UserDetails {
 
     private long id;
