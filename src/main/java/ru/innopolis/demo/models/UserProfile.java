@@ -51,7 +51,7 @@ public class UserProfile {
 
     @Override
     public String toString() {
-        return "Email " + email;
+        return "Email " + email +" Name is "+ name + " Surname is " + surname;
     }
 
 }

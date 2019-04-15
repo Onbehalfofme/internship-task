@@ -21,7 +21,7 @@ public class SwaggerConfiguration {
         return new Docket(DocumentationType.SWAGGER_2).
                 ignoredParameterTypes(AuthenticationPrincipal.class)
                 .select()
-                .apis(RequestHandlerSelectors.any())
+                .apis(RequestHandlerSelectors.basePackage("ru.innopolis.demo"))
                 .paths(PathSelectors.any())
                 .build();
     }
