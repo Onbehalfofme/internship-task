@@ -21,8 +21,6 @@ public class UserPayload {
 
     private String surname;
 
-    private Role role;
-
     @JsonFormat(pattern = "dd.MM.yyyy")
     private LocalDate birthday;
 
@@ -31,7 +29,6 @@ public class UserPayload {
         email = userProfile.getEmail();
         name = userProfile.getName();
         surname = userProfile.getSurname();
-        role = userProfile.getRole();
         birthday = userProfile.getBirthday();
     }
 }
