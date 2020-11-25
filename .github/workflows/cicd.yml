@@ -1,4 +1,4 @@
-name: Maven Package
+name: Docker build for java project
 
 on:
   push:
