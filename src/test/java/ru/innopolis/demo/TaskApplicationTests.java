@@ -5,7 +5,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-public class ControllersTests {
+public class TaskApplicationTests {
 
     @Test
     public void Test1(){}
