@@ -23,9 +23,5 @@ jobs:
     - name: Run Unit tests with Maven
       run: mvn test
       
-    - name: Build the docker-compose stack
-      run: docker-compose -f docker-compose.yml up -d
-    - name: Check running containers
-      run: docker ps -a
-    - name: Check logs
-      run: docker logs application
+    - name: Build jar
+      run: mvn install
