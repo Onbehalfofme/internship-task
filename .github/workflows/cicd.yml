@@ -30,4 +30,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with: 
         name: jar
-        path: target/app-spring-boot.jar
+        path: target/demo-0.0.1-SNAPSHOT.jar
