@@ -26,8 +26,12 @@ jobs:
       
     - name: Build jar
       run: mvn package
+      
     - name: Upload jar
       uses: actions/upload-artifact@v2
       with: 
         name: jar
         path: target/demo-0.0.1-SNAPSHOT.jar
+
+    - name: Run jar
+      run: java -jar target/demo-0.0.1-SNAPSHOT.jar
