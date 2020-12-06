@@ -1,6 +1,6 @@
-package ru.innopolis.demo;
+package ru.github.actions;
 
-public class TaskApplication {
+public class MainClass {
 
     public static void main(String[] args) {
         System.out.print("Hello, World!");

@@ -25,7 +25,7 @@ jobs:
       run: mvn test
       
     - name: Build jar
-      run: mvn package
+      run: mvn build package
       
     - name: Upload jar
       uses: actions/upload-artifact@v2

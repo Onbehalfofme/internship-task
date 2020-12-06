@@ -1,11 +1,11 @@
-package ru.innopolis.demo;
+package ru.github.actions;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-public class TaskApplicationTests {
+public class MainClassTests {
 
     @Test
     public void Test1(){}
