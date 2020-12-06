@@ -26,3 +26,8 @@ jobs:
       
     - name: Build jar
       run: mvn package
+    - name: Upload jar
+      uses: actions/upload-artifact@1
+      with: 
+        name: jar
+        path: target/app-spring-boot.jar
